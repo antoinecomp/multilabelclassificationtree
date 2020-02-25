@@ -1,6 +1,6 @@
 # multilabelclassificationtree
 
-Here is a project to adapt a binary decision tree algorithm to one that can decide on multiple tags. 
+Here is a project to adapt a [binary decision tree algorithm created by Joel Grus](https://github.com/joelgrus/data-science-from-scratch/blob/master/scratch/decision_trees.py), the man who wrote Data Science from Scratch, to one that can decide on multiple tags. 
 
 For instance if we have a party with several potential labels:
 
@@ -12,4 +12,4 @@ data = [({'Age': 1, 'Quartier': 'A', 'Income': 10}, 'PartyB'),
 ```
 
 
-I want to be able to predict the etiquette of the following: `{'Age': 1, 'Quartier': 'A', 'Income': 15}` 
+I want to be able to predict the etiquette of the following: `{'Age': 1, 'Quartier': 'A', 'Income': 15}`.
