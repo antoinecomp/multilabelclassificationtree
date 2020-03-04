@@ -1,6 +1,6 @@
-# multilabelclassificationtree
+# Multilabel Classification Tree
 
-Here is a project to adapt a [binary decision tree algorithm created by Joel Grus](https://github.com/joelgrus/data-science-from-scratch/blob/master/scratch/decision_trees.py), the man who wrote Data Science from Scratch, to one that can decide on multiple tags. 
+Here is a project to adapt a [binary decision tree algorithm created by Joel Grus](https://github.com/joelgrus/data-science-from-scratch/blob/master/scratch/decision_trees.py), the man who wrote *Data Science from Scratch*, to one that can decide on multiple tags. 
 
 For instance if we have a party with several potential labels:
 
