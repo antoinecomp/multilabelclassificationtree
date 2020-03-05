@@ -80,43 +80,41 @@ def build_tree_id3(inputs, split_candidates=None):
     #   subtrees[None] = max(inputs, key=collections.Counter(inputs).get) # if tree is empty we give the most frequent one
     subtrees[None] = None
 
-    print("best_attribute: ", best_attribute)
-    print("subtrees: ", subtrees)
+    # print("best_attribute: ", best_attribute)
+    # print("subtrees: ", subtrees)
 
     return (best_attribute, subtrees)
 
 
-def classify(tree, segments, input):
+def classify(tree, segments, data):
     """classify the input using the given decision tree"""
-    if tree in segments:
+    if len(tree) == 1 and tree[0] in segments:
         return tree
 
     # otherwise this tree consists of an attribute to split on
-    # and a dictionnary whose keys are values of that attribute
+    # and a dictionary whose keys are values of that attribute
     # and whose values of are subtrees to consider next
-    #     try:
-    print(tree)
     attribute, subtree_dict = tree
-    #     except TypeError:
-    #         print(tree)
 
-    subtree_key = input.get(attribute)  # None if input is missing in attribute
+    subtree_key = data.get(attribute)  # None if input is missing in attribute
 
     if subtree_key not in subtree_dict:  # if no subtree for key
         subtree_key = None
 
     subtree = subtree_dict[subtree_key]
-    return classify(subtree, input)
+    return classify(subtree, segments, data)
 
 
 def main():
-    data = [({'Age': 1, 'Quartier': 'A', 'Income': 10}, 'PartyB'),
-            ({'Age': 2, 'Quartier': 'B', 'Income': 20}, "PartyA"),
-            ({'Age': 3, 'Quartier': 'C', 'Income': 30}, 'ABS'),
-            ({'Age': 4, 'Quartier': 'D', 'Income': 40}, 'ABS')]
+    data = [({'Age': 20, 'Quartier': 'A', 'Income': 600}, 'PartyB'),
+            ({'Age': 30, 'Quartier': 'B', 'Income': 675}, "PartyA"),
+            ({'Age': 40, 'Quartier': 'C', 'Income': 3000}, 'ABS'),
+            ({'Age': 50, 'Quartier': 'D', 'Income': 4000}, 'ABS')]
     tree = build_tree_id3(data)
     segments = ['PartyA', 'PartyB', 'ABS']
-    classify(tree, segments, {'Age': 1, 'Quartier': 'A', 'Income': 10})
+    result = classify(tree, segments, {'Age': 20, 'Quartier': 'A', 'Income': 4000})
+    print({'Age': 20, 'Quartier': 'A', 'Income': 4000})
+    print(result)
 
 
 if __name__ == "__main__":
