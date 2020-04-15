@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: multilabelclassificationtree
+Version: 0.0.1
+Summary: A package to run a multilabel classsification tree
+Home-page: https://github.com/your_package/homepage/
+Author: Antoine Coppin
+Author-email: antoine.compagnie@gmail.com
+License: UNKNOWN
+Description: # Multilabel Classification Tree
+        
+        Here is a project to adapt a [binary decision tree algorithm created by Joel Grus](https://github.com/joelgrus/data-science-from-scratch/blob/master/scratch/decision_trees.py), the man who wrote *Data Science from Scratch*, to one that can decide on multiple tags. 
+        
+        For instance if we have a party with several potential labels:
+        
+        ```
+        data = [({'Age': 1, 'Quartier': 'A', 'Income': 10}, 'PartyB'),
+         ({'Age': 2, 'Quartier': 'B', 'Income': 20}, "PartyA"),
+         ({'Age': 3, 'Quartier': 'C', 'Income': 30}, 'ABS'),
+         ({'Age': 4, 'Quartier': 'D', 'Income': 40}, 'ABS')]
+        ```
+        
+        
+        I want to be able to predict the etiquette of the following: `{'Age': 1, 'Quartier': 'A', 'Income': 15}`.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8.1
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Description-Content-Type: text/markdown

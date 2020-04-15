@@ -14,7 +14,7 @@ setup(
     url="https://github.com/your_package/homepage/",
     packages=find_packages(),
     classifiers=[
-        "Programming Language :: Python :: 3.8.1",
+        "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     ],
 )
